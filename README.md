@@ -36,10 +36,11 @@ A ZK add-on for pushState.
 
 ### How to Use? ###
 * Call `PushState.push()` will assign a new url and push a state of it.
-* Select a component and add 'onPopupState' attribute.
-* 
+* Select a component (suggest root component of ZUL) and add 'onPopupState' attribute.
+	* The event which `onPopupState` occured is `PopupStateEvent`,
+	  you can use `event.getState()` (in Java) or `event.state` (in ZUL) to get the state pushed before.
 
-You can also run the [example.zul](example.zul).
+You can also run the [example.zul](/example.zul).
 
 ### Reference ###
 * [ZK-502]
