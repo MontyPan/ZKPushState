@@ -40,7 +40,7 @@ A ZK add-on for pushState.
 	* The event which `onPopupState` occured is `PopupStateEvent`,
 	  you can use `event.getState()` (in Java) or `event.state` (in ZUL) to get the state pushed before.
 
-You can also run the [example.zul](/example.zul).
+You can also run the `example.zul`.
 
 ### Reference ###
 * [ZK-502]
