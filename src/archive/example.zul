@@ -1,0 +1,34 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<zscript>
+import java.util.*;
+import org.zkoss.pushState.*;
+
+void showId(Map state){
+	alert(state.get("id"));
+}
+
+//Test set #bookmark and zk onBookmark's behavior
+</zscript>
+<div onPopupState="showId(event.state)" 
+ onBookmarkChange="System.out.println(event.bookmark)">
+ 
+<button label="search id1">
+	<attribute name="onClick">
+	HashMap state = new HashMap();
+	state.put("id", "id1");
+	state.put("filter", "f1");
+	org.zkoss.pushState.PushState.push(state, "useless title", "?q=1");
+	</attribute>
+</button>
+
+<button label="search id2">
+	<attribute name="onClick">
+	HashMap state = new HashMap();
+	state.put("id", "id2");
+	state.put("filter", "f2");
+	org.zkoss.pushState.PushState.push(state, "useless title", "?q=2");
+	</attribute>
+</button>
+</div>
+</zk>
