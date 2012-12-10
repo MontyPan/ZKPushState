@@ -1,0 +1,23 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<zscript>
+import java.util.*;
+import org.zkoss.pushState.*;
+
+void showId(Map state){
+	alert(state.get("id"));
+}
+
+void click(int number){
+	HashMap state = new HashMap();
+	state.put("id", "id"+number);
+	PushState.push(state, "useless title", "?id="+number);
+}
+</zscript>
+<div onPopupState="showId(event.state)">
+	<button label="push id1" onClick="click(1)" />
+	<button label="push id2" onClick="click(2)" />
+	<button label="push id3" onClick="click(3)" />
+	<button label="push id4" onClick="click(4)" />
+</div>
+</zk>

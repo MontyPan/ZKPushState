@@ -1,0 +1,53 @@
+<!-- It must use ZK EE version, because "Retrieve Event Object" is available in EE version-->
+<window apply="org.zkoss.bind.BindComposer" viewModel='@id("vm") @init("demo.ViewModel")'
+ vflex="1" onPopupState='@command("popupState", event=event)'>
+	<grid model="@load(vm.gridModel)">
+		<auxhead>
+			<auxheader label="Healthy Food List" colspan="6" />
+		</auxhead>
+		<auxhead>
+			<auxheader colspan="1">
+				<textbox id="filter1" width="100px" value="@load(vm.filter1)" />
+				<button label="Filter" width="50px" 
+				 onClick='@command("filter", f1=filter1.value, f2=filter2.value, f3=filter3.value)' />
+			</auxheader>
+			<auxheader colspan="1">
+				<textbox id="filter2" width="100px" value="@load(vm.filter2)" />
+				<button label="Filter" width="50px" 
+				 onClick='@command("filter", f1=filter1.value, f2=filter2.value, f3=filter3.value)' />
+			</auxheader>
+			<auxheader colspan="1">
+				<textbox id="filter3" width="100px" value="@load(vm.filter3)" />
+				<button label="Filter" width="50px" 
+				 onClick='@command("filter", f1=filter1.value, f2=filter2.value, f3=filter3.value)' />
+			</auxheader>
+			<auxheader label="Detail Data of Foods" colspan="3" />
+		</auxhead>
+		<columns>
+			<column hflex="2">Category</column>
+			<column hflex="2">Name</column>
+			<column hflex="2">Top Nutrients</column>
+			<column hflex="1">% of Daily</column>
+			<column hflex="1">Calories</column>
+			<column hflex="2">Quantity</column>
+		</columns>
+		<template name="model">
+			<row>
+				<label>${each.category}</label>
+				<label>${each.name}</label>
+				<label>${each.topNutrients}</label>
+				<label>${each.dailyPercent}</label>
+				<label>${each.calories}</label>
+				<label>${each.quantity}</label>
+			</row>
+		</template>
+		<foot>
+			<footer />
+			<footer />
+			<footer id="footer_msg" label="@load(vm.msg)" />
+			<footer />
+			<footer />
+			<footer id="footer_category" class="footer_right" label="@load(vm.category)" />
+		</foot>
+	</grid>
+</window>
