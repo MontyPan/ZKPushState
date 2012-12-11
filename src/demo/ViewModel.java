@@ -45,7 +45,7 @@ public class ViewModel {
 	@Command
 	@NotifyChange("*")
 	public void filter(@BindingParam("f1") String f1, @BindingParam("f2") String f2, @BindingParam("f3") String f3){
-		dofilter(f1, f2, f3);
+		doFilter(f1, f2, f3);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("f1", f1);
 		map.put("f2", f2);
@@ -57,14 +57,14 @@ public class ViewModel {
 	@NotifyChange("*")
 	public void popupState(@BindingParam("event") PopupStateEvent event){
 		Map<String, ?> state = event.getState();
-		dofilter(
+		doFilter(
 			state.get("f1").toString(), 
 			state.get("f2").toString(), 
 			state.get("f3").toString()
 		);
 	}
 
-	private void dofilter(String f1, String f2, String f3) {
+	private void doFilter(String f1, String f2, String f3) {
 		filter1 = f1;
 		filter2 = f2;
 		filter3 = f3;
