@@ -4,38 +4,8 @@ It base on [Ashish's article], but provide a Java wrapper,
 so you don't need write any JavaScript code.
 
 ### How to Setup? ###
-* download [ZKPS.jar] and put it in `WEB-INF/lib`
-* add this code block in your `WEB-INF/zk.xml`
-
-		<listener>
-			<listener-class>org.zkoss.pushState.PushStateDesktopInit</listener-class>
-		</listener>
-		<language-config>
-			<addon-uri>/WEB-INF/pushState-addon.xml</addon-uri>
-		</language-config>
-		
-* add a file name `pushState-addon.xml` in `WEB-INF`, the content is
-
-		<?xml version="1.0" encoding="UTF-8"?>
-		<language>
-			<language-name>xhtml</language-name>
-			<javascript>
-			$(window).bind("popstate", function(event) {
-				var preState = event.originalEvent.state;
-				if (preState) {
-					zAu.send(
-						new zk.Event(
-							null, 
-							"onPopupState",
-							preState
-						)
-					);
-				}
-			});
-			</javascript>
-		</language>
-		
-* start programming...  \囧/
+* Download [ZKPS.jar] and put it in `WEB-INF/lib`		
+* Start programming...  \囧/
 
 ### How to Use? ###
 * Call `PushState.push()` will assign a new url and push a state of it.
@@ -45,6 +15,10 @@ so you don't need write any JavaScript code.
 You can also test the `index.zul` or `simpleText.zul` code.
 
 Any feedback is wellcome \囧/
+
+### Support ZK Version ###
+* ZK 6.0
+* ZK 6.5
 
 ### Reference ###
 * [ZK-502]
