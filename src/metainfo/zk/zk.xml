@@ -3,7 +3,4 @@
 	<listener>
 		<listener-class>org.zkoss.pushState.PushStateDesktopInit</listener-class>
 	</listener>
-	<language-config>
-		<addon-uri>/WEB-INF/pushState-addon.xml</addon-uri>
-	</language-config>
 </zk>
