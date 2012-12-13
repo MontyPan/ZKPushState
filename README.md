@@ -24,6 +24,6 @@ Any feedback is wellcome \囧/
 * [ZK-502]
 * [Ashish's article]
 
-[ZKPS.jar]: https://github.com/downloads/MontyPan/ZKPushState/ZKPS.jar
+[ZKPS.jar]: http://zkpushstate.googlecode.com/files/ZKPS.jar
 [ZK-502]: http://tracker.zkoss.org/browse/ZK-502
 [Ashish's article]: http://blog.zkoss.org/index.php/2012/03/30/history-management-with-html5-history-api-in-zk/
