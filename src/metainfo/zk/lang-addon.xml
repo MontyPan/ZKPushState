@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
 	<addon-name>ZKPushState</addon-name>
-	<language-name>xhtml</language-name>
+	<language-name>xul/html</language-name>
 	<javascript>
 	$(window).bind("popstate", function(event) {
 		var preState = event.originalEvent.state;
